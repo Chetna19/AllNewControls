@@ -1,0 +1,261 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+     xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield"
+		controllerName="allnewcontrols.FirstPage" xmlns:html="http://www.w3.org/1999/xhtml"  xmlns:l="sap.ui.layout" height="100%">
+	 
+ <!--  <MessagePage showHeader="false">
+  </MessagePage>
+ -->
+<!--  <l:VerticalLayout
+    class="sapUiContentPadding"
+    width="100%">
+    <l:content>
+      <Button text="Default Message Box" press="defaultMessageBoxClickHandler" class="sapUiSmallMarginBottom" width="220px" />
+      <Button text="Success Message Box" press="successMessageBoxClickHandler" icon="sap-icon://message-success" class="sapUiSmallMarginBottom" width="220px" />
+      <Button text="Warning Message Box" press="warningMessageBoxClickHandler" icon="sap-icon://message-warning" class="sapUiSmallMarginBottom" width="220px" />
+      <Button text="Error Message Box" press="errorMessageBoxClickHandler" icon="sap-icon://message-error" class="sapUiSmallMarginBottom" width="220px" />
+      <Button text="Information Message Box" press="informationMessageBoxClickHandler" icon="sap-icon://message-information" class="sapUiSmallMarginBottom" width="220px" />
+      <Button text="Question Message Box" press="questionMessageBoxClickHandler" icon="sap-icon://question-mark" class="sapUiSmallMarginBottom" width="220px" />
+    </l:content>
+  </l:VerticalLayout>
+   -->
+  
+  
+  
+  <!-- <Page
+      title="Centered Title"
+      class="sapUiContentPadding"
+      height="100%">
+    <content>
+      <HBox>
+        <Button
+            text="Show MessagePopover"
+            press="handleMessagePopoverPress1"
+            width="250px" />
+
+        <Button text="Show with initiallyExpanded set to false" press="handleMessagePopoverPress3" />
+      </HBox>
+    </content>
+    <footer>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <Button icon="sap-icon://alert" text="{/messagesLength}" type="Emphasized" press="handleMessagePopoverPress2" />
+        <ToolbarSpacer/>
+      </Toolbar>
+    </footer>
+  </Page> -->
+  
+   <!-- <Page showHeader="false">
+    <content>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <Label
+          text="Layout:">
+        </Label>
+        <Select
+          id="tbSelect"
+          items="{/items}"
+          selectedKey="{/selectedKey}"
+          change="onSelectChange" >
+          <core:Item key="{key}" text="{text}"/>
+        </Select>
+      </Toolbar>
+      <UploadCollection
+        id="UploadCollection"
+        maximumFilenameLength="55"
+        multiple="true"
+        items="{/items}"
+        showSeparators="None"
+        change="onChange"
+        fileDeleted="onFileDeleted"
+        fileRenamed="onFileRenamed"
+        fileSizeExceed="onFileSizeExceed"
+        typeMissmatch="onTypeMissmatch"
+        uploadComplete="onUploadComplete">
+        <UploadCollectionItem
+          contributor="{contributor}"
+          documentId="{documentId}"
+          fileName="{fileName}"
+          fileSize="{fileSize}"
+          mimeType="{mimeType}"
+          thumbnailUrl="{thumbnailUrl}"
+          uploadedDate="{uploadedDate}"
+          url="{url}"
+          enableEdit="{enableEdit}"
+          enableDelete="{enableDelete}" />
+      </UploadCollection>
+    </content>
+  </Page> -->
+                       <!-- ===============================================smart form ================================================-->
+                       
+                       <Page id="page" title="Product" enableScrolling="false">
+    <content>
+      <smartForm:SmartForm id="smartForm"
+        editTogglable="true" title="{Name}">
+        <smartForm:Group label="Product">
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{ProductId}" />
+          </smartForm:GroupElement>
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{Name}" />
+          </smartForm:GroupElement>
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{Category}">
+              <smartField:configuration>
+                <smartField:Configuration controlType="dropDownList"
+                  displayBehaviour="descriptionAndId" />
+              </smartField:configuration>
+            </smartField:SmartField>
+          </smartForm:GroupElement>
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{Description}" />
+          </smartForm:GroupElement>
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{Price}" />
+          </smartForm:GroupElement>
+        </smartForm:Group>
+        <smartForm:Group label="Supplier">
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{SupplierName}" />
+          </smartForm:GroupElement>
+        </smartForm:Group>
+        <smartForm:Group label="Stock">
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{Status}" />
+          </smartForm:GroupElement>
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{Quantity}" />
+          </smartForm:GroupElement>
+        </smartForm:Group>
+        <smartForm:Group label="Specification">
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{Width}" />
+          </smartForm:GroupElement>
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{Depth}" />
+          </smartForm:GroupElement>
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{Height}" />
+          </smartForm:GroupElement>
+          <smartForm:GroupElement>
+            <smartField:SmartField value="{WeightMeasure}" />
+          </smartForm:GroupElement>
+        </smartForm:Group>
+        <smartForm:Group label="Picture">
+          <smartForm:GroupElement>
+            <Image src="{ProductPicUrl}" />
+          </smartForm:GroupElement>
+        </smartForm:Group>
+      </smartForm:SmartForm>
+    </content>
+  </Page>
+  
+  <!--  <Page showHeader="false">
+    <content>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <Label
+          text="Layout:">
+        </Label>
+        <Select
+          id="tbSelect"
+          items="{/items}"
+          selectedKey="{/selectedKey}"
+          change="onSelectChange" >
+          <core:Item key="{key}" text="{text}"/>
+        </Select>
+      </Toolbar>
+      <UploadCollection
+        id="UploadCollection"
+        maximumFilenameLength="55"
+        multiple="true"
+        items="{/items}"
+        showSeparators="None"
+        change="onChange"
+        fileDeleted="onFileDeleted"
+        fileRenamed="onFileRenamed"
+        fileSizeExceed="onFileSizeExceed"
+        typeMissmatch="onTypeMissmatch"
+        uploadComplete="onUploadComplete">
+        <UploadCollectionItem
+          contributor="{contributor}"
+          documentId="{documentId}"
+          fileName="{fileName}"
+          fileSize="{fileSize}"
+          mimeType="{mimeType}"
+          thumbnailUrl="{thumbnailUrl}"
+          uploadedDate="{uploadedDate}"
+          url="{url}"
+          enableEdit="{enableEdit}"
+          enableDelete="{enableDelete}" />
+      </UploadCollection>
+    </content>
+  </Page>
+   <Page
+        showHeader="false"
+    class="sapUiContentPadding"
+    showNavButton="false" >
+        
+    <content>
+      <VBox>
+        <Label text="Use this slider to shrink the toolbars and observe their behavior."/>
+                <Label text="Note: the icon buttons display text only when in the overflow area."/>
+
+        <Slider value="100" liveChange="onSliderMoved"></Slider>
+      </VBox>
+
+            <Table id="idProductsTable"
+                   items="{/ProductCollection}">
+                <headerToolbar>
+                    <OverflowToolbar id="otbSubheader">
+                        <ToolbarSpacer/>
+                        <SearchField id="maxPrice" liveChange="onFilter">
+                            <layoutData><OverflowToolbarLayoutData minWidth="200px" maxWidth="300px" shrinkable="true"/></layoutData>
+                        </SearchField>
+                        <Button text="Reset" type="Transparent" press="onReset"/>
+                        <OverflowToolbarButton text="Sort" icon="sap-icon://sort" press="onSort"/>
+                        <OverflowToolbarButton text="Group" icon="sap-icon://group-2" press="onGroup"/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column width="12em"><Text text="Product" /></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Supplier" /></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right"><Text text="Dimensions" /></Column>
+                    <Column hAlign="Right"><Text text="Price" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier title="{Name}" text="{ProductId}" />
+                            <Text text="{SupplierName}" />
+                            <Text text="{Width} x {Depth} x {Height} {DimUnit}" />
+                            <ObjectNumber
+                                    number="{Price}"
+                                    unit="{CurrencyCode}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+    </content>
+    <footer>
+            <OverflowToolbar id="otbFooter">
+                <ToolbarSpacer/>
+                <Button type="Accept" text="Accept">
+                    <layoutData><OverflowToolbarLayoutData moveToOverflow="false" /></layoutData>
+                </Button>
+                <Button type="Reject" text="Reject">
+                    <layoutData><OverflowToolbarLayoutData moveToOverflow="false" /></layoutData>
+                </Button>
+                <OverflowToolbarButton text="Delete" icon="sap-icon://delete"/>
+                <OverflowToolbarButton text="Edit" icon="sap-icon://edit"/>
+                <OverflowToolbarButton text="Add" icon="sap-icon://add"/>
+                <OverflowToolbarButton text="Favorite" icon="sap-icon://favorite"/>                
+                <OverflowToolbarButton text="Flag" icon="sap-icon://flag"/>
+
+            </OverflowToolbar>
+    </footer>
+
+  </Page>
+ -->
+</core:View>
+
